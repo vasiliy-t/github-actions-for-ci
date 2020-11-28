@@ -28,12 +28,10 @@ jobs:
     - uses: actions/upload-artifact@master
       with:
         name: webpack artifacts
-    needs: build
+        path: public/
 
-      - uses: actions/upload-artifact@master
-        with:
-          name: webpack artifacts
-          path: public/
+  test:
+    needs: build
     runs-on: ubuntu-latest
     strategy:
       matrix:
